@@ -261,7 +261,140 @@ namespace TaxCalculator.UnitTest
             //Act
             var result = income.CalculateTaxFor3200000(360000m);
             //Assert
-            Assert.AreEqual(86400, result);
+            Assert.AreEqual(86400m, result);
+        }
+
+
+        [Test]
+        public void CalulateBelowAndEqual300000AreEqual()
+        {
+            //Arrange
+            var income=new TaxCalculatorService();
+            //Act
+            var result = income.CalculateBelowAndEqual300000(123000);
+            //Assert
+            Assert.AreEqual(8610m, result);
+        }
+
+        [Test]
+        public void CalulateBelowAndEqual300000AreNotEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateBelowAndEqual300000(123000);
+            //Assert
+            Assert.AreNotEqual(23000m, result);
+        }
+
+        [Test]
+        public void CalculateAbove300000AndEqual600000AreNotEqual()
+        {
+            //Arrange
+            var income=new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove300000AndEqual600000(500000);
+            //Assert
+            Assert.AreNotEqual(result, 23000m);
+        }
+
+        [Test]
+        public void CalculateAbove300000AndEqual600000AreEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove300000AndEqual600000(500000);
+            //Assert
+            Assert.AreEqual(43000m, result);
+        }
+
+        [Test]
+        public void CalculateAbove600000AndEqual1100000AreEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove600000AndEqual1100000(900000);
+            //Assert
+            Assert.AreEqual(99000m, result);
+        }
+
+        [Test]
+        public void CalculateAbove600000AndEqual1100000AreNotEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove600000AndEqual1100000(900000);
+            //Assert
+            Assert.AreNotEqual(43000m, result);
+        }
+
+        [Test]
+        public void CalculateAbove1100000AndEqual1600000AreEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove1100000AndEqual1600000(1234000);
+            //Assert
+            Assert.AreEqual(154460m, result);
+        }
+
+        [Test]
+        public void CalculateAbove1100000AndEqual1600000AreNotEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove1100000AndEqual1600000(1234000);
+            //Assert
+            Assert.AreNotEqual(123000m, result);
+        }
+
+        [Test]
+        public void CalculateAbove1600000AndEqual3200000AreEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove1600000AndEqual3200000(2500000);
+            //Assert
+            Assert.AreEqual(413000m, result);
+        }
+
+        [Test]
+        public void CalculateAbove1600000AndEqual3200000AreNotEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove1100000AndEqual1600000(1234000);
+            //Assert
+            Assert.AreNotEqual(12893000m, result);
+        }
+
+        [Test]
+        public void CalculateAbove3200000AreEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove1600000AndEqual3200000(6700000);
+            //Assert
+            Assert.AreEqual(1295000m, result);
+        }
+
+        [Test]
+        public void CalculateAbove3200000AreNotEqual()
+        {
+            //Arrange
+            var income = new TaxCalculatorService();
+            //Act
+            var result = income.CalculateAbove1100000AndEqual1600000(7900000);
+            //Assert
+            Assert.AreNotEqual(12893786000m, result);
         }
     }
 }

@@ -8,6 +8,76 @@ namespace TaxCalculator
 {
     public class TaxCalculatorService 
     {
+        public decimal CalculateBelowAndEqual300000(decimal annualSalary)
+        {
+            return CalculateTaxForFirst300000((annualSalary));
+        }
+
+        public decimal CalculateAbove300000AndEqual600000(decimal annualSalary)
+        {
+            decimal result = 0;
+            result += CalculateTaxForFirst300000(300000);
+            annualSalary -= 300000;
+            result += CalculateTaxForSecond300000(annualSalary);
+            return result;
+        }
+
+        public decimal CalculateAbove600000AndEqual1100000(decimal annualSalary)
+        {
+            decimal tax = 0;
+            tax += CalculateTaxForFirst300000(300000);
+            annualSalary -= 300000;
+            tax += CalculateTaxForSecond300000(300000);
+            annualSalary -= 300000;
+            tax += CalculateTaxForFirst500000(annualSalary);
+            return tax;
+        }
+
+        public decimal CalculateAbove1100000AndEqual1600000(decimal annualSalary)
+        {
+            decimal tax=0;
+            tax += CalculateTaxForFirst300000(300000);
+            annualSalary -= 300000;
+            tax += CalculateTaxForSecond300000(300000);
+            annualSalary -= 300000;
+            tax += CalculateTaxForFirst500000(500000);
+            annualSalary -= 500000;
+            tax += CalculateTaxForSecond500000(annualSalary);
+            return tax;
+
+        }
+
+        public decimal CalculateAbove1600000AndEqual3200000(decimal taxableIncome)
+        {
+            decimal tax = 0;
+            tax += CalculateTaxForFirst300000(300000);
+            taxableIncome -= 300000;
+            tax += CalculateTaxForSecond300000(300000);
+            taxableIncome -= 300000;
+            tax += CalculateTaxForFirst500000(500000);
+            taxableIncome -= 500000;
+            tax += CalculateTaxForSecond500000(500000);
+            taxableIncome -= 500000;
+            tax += CalculateTaxFor1600000(taxableIncome);
+            return tax;
+        }
+
+        public decimal CalculateAbove3200000(decimal taxableIncome)
+        {
+            decimal tax = 0;
+            tax += CalculateTaxForFirst300000(300000);
+            taxableIncome -= 300000;
+            tax += CalculateTaxForSecond300000(300000);
+            taxableIncome -= 300000;
+            tax += CalculateTaxForFirst500000(500000);
+            taxableIncome -= 500000;
+            tax += CalculateTaxForSecond500000(500000);
+            taxableIncome -= 500000;
+            tax += CalculateTaxFor1600000(1600000);
+            taxableIncome -= 1600000;
+            tax += CalculateTaxFor3200000(taxableIncome);
+            return tax;
+        }
 
         public decimal CalculatePension(decimal GI)
         {
@@ -76,65 +146,34 @@ namespace TaxCalculator
             return yearlyTax/12;
         }
 
-        public decimal GetYearlyTax(decimal salary)
+        public decimal GetYearlyTax(decimal taxableIncome)
         {
-            decimal tax = 0;
-            decimal annualSalary = salary;
-            if(annualSalary <= 300000)
+            
+            if(taxableIncome <= 300000)
             {
-                tax += CalculateTaxForFirst300000((annualSalary));
+                return CalculateBelowAndEqual300000(taxableIncome);
             }
-            else if(annualSalary > 300000 && annualSalary <= 600000)
+            else if(taxableIncome > 300000 && taxableIncome <= 600000)
             {
-                tax += CalculateTaxForFirst300000(300000);
-                annualSalary-= 300000;
-                tax += CalculateTaxForSecond300000(annualSalary);
+                return CalculateAbove300000AndEqual600000(taxableIncome);
             }
-            else if(annualSalary > 600000 && annualSalary <= 1100000)
+            else if(taxableIncome > 600000 && taxableIncome <= 1100000)
             {
-                tax += CalculateTaxForFirst300000(300000);
-                annualSalary -= 300000;
-                tax += CalculateTaxForSecond300000(300000);
-                annualSalary -= 300000;
-                tax += CalculateTaxForFirst500000(annualSalary);
+                return CalculateAbove600000AndEqual1100000(taxableIncome);
             }
-            else if(annualSalary > 1100000 && annualSalary <= 1600000)
+            else if(taxableIncome > 1100000 && taxableIncome <= 1600000)
             {
-                tax += CalculateTaxForFirst300000(300000);
-                annualSalary -= 300000;
-                tax += CalculateTaxForSecond300000(300000);
-                annualSalary -= 300000;
-                tax += CalculateTaxForFirst500000(500000);
-                annualSalary -= 500000;
-                tax +=CalculateTaxForSecond500000(annualSalary);
+               return CalculateAbove1100000AndEqual1600000(taxableIncome) ;
             }
-            else if(annualSalary > 1600000 && annualSalary <= 3200000)
+            else if(taxableIncome > 1600000 && taxableIncome <= 3200000)
             {
-                tax += CalculateTaxForFirst300000(300000);
-                annualSalary -= 300000;
-                tax += CalculateTaxForSecond300000(300000);
-                annualSalary -= 300000;
-                tax += CalculateTaxForFirst500000(500000);
-                annualSalary -= 500000;
-                tax += CalculateTaxForSecond500000(500000);
-                annualSalary -= 500000;
-                tax += CalculateTaxFor1600000(annualSalary);
+                return CalculateAbove1600000AndEqual3200000(taxableIncome);
             }
             else
             {
-                tax += CalculateTaxForFirst300000(300000);
-                annualSalary -= 300000;
-                tax += CalculateTaxForSecond300000(300000);
-                annualSalary -= 300000;
-                tax += CalculateTaxForFirst500000(500000);
-                annualSalary -= 500000;
-                tax += CalculateTaxForSecond500000(500000);
-                annualSalary -= 500000;
-                tax += CalculateTaxFor1600000(1600000);
-                annualSalary -= 1600000;
-                tax += CalculateTaxFor3200000(annualSalary);
+                return CalculateAbove3200000(taxableIncome);
             }
-            return tax;
+         
         }
     }
 }
