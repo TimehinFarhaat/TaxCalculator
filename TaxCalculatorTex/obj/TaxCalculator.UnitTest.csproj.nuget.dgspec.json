@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculatorTex\\TaxCalculator.UnitTest.csproj": {}
+    "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculatorTex\\TaxCalculator.UnitTest.csproj": {}
   },
   "projects": {
-    "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculatorTex\\TaxCalculator.UnitTest.csproj": {
+    "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculatorTex\\TaxCalculator.UnitTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculatorTex\\TaxCalculator.UnitTest.csproj",
+        "projectUniqueName": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculatorTex\\TaxCalculator.UnitTest.csproj",
         "projectName": "TaxCalculator.UnitTest",
-        "projectPath": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculatorTex\\TaxCalculator.UnitTest.csproj",
+        "projectPath": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculatorTex\\TaxCalculator.UnitTest.csproj",
         "packagesPath": "C:\\Users\\staa99\\.nuget\\packages\\",
-        "outputPath": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculatorTex\\obj\\",
+        "outputPath": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculatorTex\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj": {
-                "projectPath": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj"
+              "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj": {
+                "projectPath": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj"
               }
             }
           }
@@ -85,14 +85,14 @@
         }
       }
     },
-    "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj": {
+    "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj",
+        "projectUniqueName": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj",
         "projectName": "TaxCalculator",
-        "projectPath": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj",
+        "projectPath": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj",
         "packagesPath": "C:\\Users\\staa99\\.nuget\\packages\\",
-        "outputPath": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculator\\obj\\",
+        "outputPath": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

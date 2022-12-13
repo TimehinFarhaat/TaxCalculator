@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj",
+      "projectUniqueName": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj",
       "projectName": "TaxCalculator",
-      "projectPath": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj",
+      "projectPath": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculator\\TaxCalculator.csproj",
       "packagesPath": "C:\\Users\\staa99\\.nuget\\packages\\",
-      "outputPath": "D:\\staa99\\Desktop\\What\\TaxCalculator\\TaxCalculator\\obj\\",
+      "outputPath": "D:\\staa99\\Desktop\\TaxCalculator\\TaxCalculator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
